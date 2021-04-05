@@ -1,0 +1,68 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/veriabel';
+
+.root {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  position: relative;
+  transition: $expo;
+
+  &:hover {
+    border-color: $GREY;
+  }
+}
+
+.title {
+  font-family: $Roboto-Bold;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-family: $RobotoLight;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+
+  & b {
+    font-family: $Roboto-Bold;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  margin: 0 -10px;
+  position: relative;
+  z-index: 2;
+
+  & .col {
+    max-width: 50%;
+    flex: 0 0 50%;
+    padding: 0 10px;
+  }
+
+  & button {
+    width: 100%;
+  }
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: $borderRadius;
+}

@@ -1,0 +1,153 @@
+@import '../../assets/scss/veriabel';
+
+/* VERIABEL */
+
+$init: px;
+
+$xl: 1599.98;
+$lg: 1199.98;
+$md: 991.98;
+$sm: 767.98;
+$xs: 575.98;
+$ss: 375.98;
+
+$min_xl: 1600;
+$min_lg: 1200;
+$min_md: 992;
+$min_sm: 768;
+$min_xs: 576;
+$min_ss: 320;
+
+/* MEDIA */
+
+@mixin max-media($media) {
+  @if $media == xl {
+    @media screen and (max-width: $xl + $init),
+      (max-width: $xl + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media screen and (max-width: $lg + $init),
+      (max-width: $lg + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == md {
+    @media screen and (max-width: $md + $init),
+      (max-width: $md + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media screen and (max-width: $sm + $init),
+      (max-width: $sm + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == xs {
+    @media screen and (max-width: $xs + $init),
+      (max-width: $xs + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == ss {
+    @media screen and (max-width: $ss + $init),
+      (max-width: $ss + $init) and (orientation: landscape),
+      (max-width: $md + $init) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+@mixin min-media($media) {
+  @if $media == min_xl {
+    @media only screen and (min-width: $min_xl + $init) {
+      @content;
+    }
+  } @else if $media == min_lg {
+    @media only screen and (min-width: $min_lg + $init) {
+      @content;
+    }
+  } @else if $media == min_md {
+    @media only screen and (min-width: $min_md + $init) {
+      @content;
+    }
+  } @else if $media == min_sm {
+    @media only screen and (min-width: $min_sm + $init) {
+      @content;
+    }
+  } @else if $media == min_xs {
+    @media only screen and (min-width: $min_xs + $init) {
+      @content;
+    }
+  } @else if $media == min_ss {
+    @media only screen and (min-width: $min_ss + $init) {
+      @content;
+    }
+  }
+}
+
+/*How it's use*/
+@include max-media(xl) {
+}
+@include max-media(lg) {
+}
+@include max-media(md) {
+}
+@include max-media(sm) {
+}
+@include max-media(xs) {
+}
+@include max-media(ss) {
+}
+
+@include min-media(min_xl) {
+}
+@include min-media(min_lg) {
+}
+@include min-media(min_md) {
+}
+@include min-media(min_sm) {
+}
+@include min-media(min_xs) {
+}
+@include min-media(min_ss) {
+}
+
+@mixin scrollbarY() {
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    outline: 1px solid #efefef;
+    border-radius: 5px;
+  }
+}
+
+@mixin scrollbarX() {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 0.5em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    outline: 1px solid #efefef;
+    border-radius: 5px;
+  }
+}

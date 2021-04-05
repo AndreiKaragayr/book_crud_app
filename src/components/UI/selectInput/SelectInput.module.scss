@@ -1,0 +1,51 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.root {
+	position: relative;
+	z-index: 9;
+
+	&.error {
+		border-color: $RED;
+	}
+
+	& input {
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.field {
+	width: 100%;
+	position: relative;
+
+	& .label{
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-top: 15px;
+		margin-left: 15px;
+	}
+}
+
+.label {
+	color: $BLUE;
+	font-family: $Roboto-Bold;
+	font-size: 10px;
+	font-weight: 900;
+	line-height: 14px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 5px;
+	z-index: 2;
+}
+
+.errorMessage {
+	font-family: $RobotoRegular;
+	font-size: 14px;
+	line-height: 24px;
+	color: $RED !important;
+	text-align: left;
+}

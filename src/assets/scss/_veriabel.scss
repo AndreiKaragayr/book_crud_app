@@ -1,0 +1,29 @@
+/* FONTS */
+
+$RobotoLight: 'Roboto-Light', sans-serif;
+$RobotoRegular: 'Roboto-Regular', sans-serif;
+$Roboto-Bold: 'Roboto-Bold', sans-serif;
+
+/* COLOR */
+
+$WHITE: #FFFFFF;
+$DARK: #212121;
+$GREY: #cdcdcd;
+$RED: #e93c5c;
+$ORANGE: #EF8D76;
+$GREEN: #00CD95;
+$BLUE: #0070ac;
+$PLACEHOLDER_COLOR: rgba(21, 21, 21, 0.5);
+
+/* Border */
+$borderRadius: 6px;
+
+/* Shadow */
+//$boxShadow: 0 8px 16px 0 rgba(155, 155, 155, 0.1);
+$boxShadow: 0 4px 8px 0 rgba(155, 155, 125, 0.2);
+
+/* TRANSITION */
+
+$ease: 0.3s ease;
+$out: 0.2s ease-out;
+$expo: 0.4s cubic-bezier(0.16, 1, 0.3, 1);

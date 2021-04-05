@@ -1,0 +1,30 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/veriabel';
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+  position: relative;
+}
+
+.title {
+  font-family: $Roboto-Bold;
+  font-size: 32px;
+  line-height: 38px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.loading {
+  color: $DARK;
+  font-family: $RobotoRegular;
+  font-size: 18px;
+  line-height: 34px;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}

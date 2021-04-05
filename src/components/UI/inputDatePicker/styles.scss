@@ -1,0 +1,166 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.datePicker-root {
+  font-family: $RobotoRegular;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+  color: $DARK;
+  text-align: left;
+  background: $WHITE;
+
+  &.readOnly {
+    pointer-events: none;
+  }
+
+  &.readOnly .datePicker-field {
+    background: rgba(211, 216, 250, 0.5);
+  }
+}
+
+.datePicker-field {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid $GREY;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+
+  &--error {
+    border-color: $RED;
+  }
+
+  & .react-calendar {
+    height: 308px;
+  }
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $PLACEHOLDER_COLOR;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $PLACEHOLDER_COLOR;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $PLACEHOLDER_COLOR;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $PLACEHOLDER_COLOR;
+  }
+
+  .react-date-picker__wrapper {
+    border: 0;
+    padding-top: 16px;
+  }
+
+  & button {
+    opacity: 0.5;
+    flex: 0 1;
+  }
+
+  & input {
+    display: inline-block;
+    font-family: $RobotoRegular;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: normal;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0 !important;
+    cursor: pointer;
+  }
+
+  & input:focus {
+    outline: none;
+  }
+
+  &.error {
+    border-color: $ORANGE;
+  }
+
+  & .react-date-picker__inputGroup__input {
+    color: $DARK;
+  }
+
+  & .react-date-picker__clear-button__icon line,
+  & .react-date-picker__calendar-button__icon line,
+  & .react-date-picker__calendar-button__icon rect {
+    stroke: $PLACEHOLDER_COLOR;
+  }
+
+  & .react-date-picker__clear-button__icon:hover line {
+    stroke: $DARK;
+  }
+
+  & .react-date-picker__clear-button {
+    position: absolute;
+    right: -6px;
+    padding: 2px 0 0 0;
+    width: 20px !important;
+    height: 20px;
+  }
+
+  & .react-date-picker__calendar-button {
+    display: none;
+  }
+
+  & .react-date-picker__inputGroup {
+    cursor: pointer;
+  }
+
+  //& .react-date-picker__inputGroup__leadingZero {
+  //  display: none;
+  //}
+
+  & .visibility-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.datePicker-toolt {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin: 15px;
+}
+
+.datePicker-field-label {
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  top: 16px;
+  color: $BLUE;
+  font-family: $Roboto-Bold;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 7px;
+
+  & img {
+    display: block;
+    width: 12px;
+    margin-right: 7px;
+  }
+
+  & + input {
+    padding-top: 16px;
+  }
+}
+
+.datePicker-field-errorMessage {
+  font-family: $RobotoRegular;
+  font-size: 14px;
+  line-height: 24px;
+  color: $RED !important;
+  text-align: left;
+  background-color: #f4f6f7;
+}

@@ -1,0 +1,106 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.root {
+	font-family: $RobotoRegular;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: normal;
+	color: $DARK;
+	text-align: left;
+
+	&.readOnly {
+		pointer-events: none;
+	}
+
+	&.readOnly .field {
+		background: rgba(211, 216, 250, 0.5)
+	}
+
+	&.readOnly .label {
+		background: rgba(211, 216, 250, 0);
+	}
+}
+
+.field {
+	position: relative;
+	border-radius: 12px;
+	border: 1px solid $GREY;
+	min-height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	background: $WHITE;
+
+	& ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: $PLACEHOLDER_COLOR;
+	}
+	& ::-moz-placeholder { /* Firefox 19+ */
+		color: $PLACEHOLDER_COLOR;
+	}
+	& :-ms-input-placeholder { /* IE 10+ */
+		color: $PLACEHOLDER_COLOR;
+	}
+	& :-moz-placeholder { /* Firefox 18- */
+		color: $PLACEHOLDER_COLOR;
+	}
+
+	&.error {
+		border-color: $ORANGE;
+	}
+
+	& textarea {
+		font-family: $RobotoRegular;
+		font-size: 18px;
+		font-weight: normal;
+		line-height: normal;
+		border-radius: 12px;
+		padding: 36px 20px 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		border: 0;
+		resize: none;
+
+		@include scrollbarY;
+	}
+
+	& textarea:focus {
+		outline: none;
+	}
+}
+
+.toolt {
+	width: 16px !important;
+	height: 16px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	margin: 15px;
+}
+
+.label {
+	width: 100%;
+	background-color: $WHITE;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 15px 20px 8px;
+	color: $BLUE;
+	font-family: $Roboto-Bold;
+	font-size: 10px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.errorMessage {
+	font-family: $RobotoRegular;
+	font-size: 14px;
+	line-height: 24px;
+	color: $RED !important;
+	text-align: left;
+}
