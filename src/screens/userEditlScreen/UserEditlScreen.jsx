@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import styles from './UserEditlScreen.module.scss';
 import {connect} from "react-redux";
 import {useParams} from "react-router-dom"
-import {getUserById, updateUser} from "../../store/users/action";
-import MainLoyalty from "../../components/mainLoyalty";
+import {getUserById, updateUser} from "../../store/authors/action";
+import MainLoyalty from "../../components/layout/mainLoyalty";
 import EditUserForm from "../../components/forms/editUserForm/EditUserForm";
 import moment from "moment";
 

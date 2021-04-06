@@ -1,82 +1,90 @@
-import {USERS} from "./type";
+import {AUTHORS} from "./type";
 
 const defaultState = {
-  usersList: null,
-  user_detail: null,
+  authorsLists: null,
   loading: true,
   error: ''
 };
 
-export const UsersReducer = ( state = defaultState, action ) => {
+export const AuthorsReducer = ( state = defaultState, action ) => {
   const { type } = action;
   switch( type ) {
-    case USERS.GET.REQUEST :
+    case AUTHORS.ADD.REQUEST :
       return {
         ...state,
         loading: true
       }
-    case USERS.GET.SUCCESS :
+    case AUTHORS.ADD.SUCCESS :
       return {
         ...state,
         loading: false,
-        usersList: action.payload,
+        authorsLists: [...state.authorsLists, {id: new Date(), ...action.payload}],
         error: ''
       }
-    case USERS.GET.FAILURE :
+    case AUTHORS.ADD.FAILURE :
       return {
         ...state,
         loading: false,
         error: action.payload
       }
-    case USERS.GET_USER.REQUEST :
+    case AUTHORS.GET.REQUEST :
       return {
         ...state,
         loading: true
       }
-    case USERS.GET_USER.SUCCESS :
+    case AUTHORS.GET.SUCCESS :
       return {
         ...state,
         loading: false,
-        user_detail: action.payload,
+        authorsLists: Object.keys(action.payload).map(key => ({...action.payload[key], id: key})),
         error: ''
       }
-    case USERS.GET_USER.FAILURE :
+    case AUTHORS.GET.FAILURE :
       return {
         ...state,
         loading: false,
         error: action.payload
       }
-    case USERS.UPDATE_USER.REQUEST :
+    case AUTHORS.UPDATE.REQUEST :
       return {
         ...state,
         loading: true
       }
-    case USERS.UPDATE_USER.SUCCESS :
+    case AUTHORS.UPDATE.SUCCESS :
       return {
         ...state,
         loading: false,
-        user_detail: action.payload,
+        authorsLists: state.authorsLists.map(a => {
+          if(a.id === action.payload.id){
+            return {
+              ...a,
+              first_name: action.payload.first_name,
+              last_name: action.payload.last_name
+            }
+          }
+          return a
+        }),
         error: ''
       }
-    case USERS.UPDATE_USER.FAILURE :
+    case AUTHORS.UPDATE.FAILURE :
       return {
         ...state,
         loading: false,
         error: action.payload
       }
-    case USERS.DELETE_USER.REQUEST :
+    case AUTHORS.DELETE.REQUEST :
       return {
         ...state,
         loading: true
       }
-    case USERS.DELETE_USER.SUCCESS :
+    case AUTHORS.DELETE.SUCCESS :
       return {
         ...state,
         loading: false,
-        usersList: state.usersList.filter(u => u.id !== action.payload),
+        authorsLists: state.authorsLists.filter(a => a.id !== action.payload),
         error: ''
       }
-    case USERS.DELETE_USER.FAILURE :
+    case AUTHORS.DELETE.FAILURE :
       return {
         ...state,
         loading: false,
@@ -85,5 +93,4 @@ export const UsersReducer = ( state = defaultState, action ) => {
     default :
       return state
   }
-
 }

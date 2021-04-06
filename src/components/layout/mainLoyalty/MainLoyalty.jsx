@@ -6,7 +6,7 @@ const MainLoyalty = ({isLoading = true, title = '', ...props}) => {
   return (
     <>
       <Header />
-      <main className={styles.container}>
+      <main className={`container ${styles.root}`}>
         {title ? <h1 className={styles.title}>{title}</h1> : null}
         {
           isLoading ?

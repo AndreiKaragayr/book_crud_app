@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HomeScreen.module.scss';
-import MainLoyalty from "../../components/mainLoyalty";
+import MainLoyalty from "../../components/layout/mainLoyalty";
 
 const HomeScreen = () => {
   return (

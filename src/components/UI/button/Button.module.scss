@@ -2,79 +2,8 @@
 @import "../../../assets/scss/veriabel";
 
 .root {
-  max-width: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $RobotoRegular;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  text-align: center;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: $out;
-
-  & img,
-  & svg {
-    width: 16px;
-    max-height: 16px;
-    margin-right: 10px;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &.outline {
-    color: $DARK;
-    border: 1px solid $DARK;
-    background: $WHITE;
-
-    &:hover {
-      color: $WHITE;
-      border: 1px solid $DARK;
-      background: $DARK;
-    }
-  }
-
-  &.primary {
-    color: $WHITE;
-    border: 1px solid $BLUE;
-    background: $BLUE;
-
-    &:hover {
-      color: $WHITE;
-      border: 1px solid $DARK;
-      background: $DARK;
-    }
-  }
-
-  &.red {
-    color: $WHITE;
-    border: 1px solid $RED;
-    background: $RED;
-
-    &:hover {
-      color: $WHITE;
-      border: 1px solid $DARK;
-      background: $DARK;
-    }
-  }
-
-  &.green {
-    color: $WHITE;
-    border: 1px solid $GREEN;
-    background: $GREEN;
-
-    &:hover {
-      color: $WHITE;
-      border: 1px solid $DARK;
-      background: $DARK;
-    }
-  }
+  border-radius: 8px;
+  height: 48px;
 
   &:disabled,
   &[disabled="disabled"] {

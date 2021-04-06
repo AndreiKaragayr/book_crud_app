@@ -3,9 +3,9 @@ import styles from './UsersScreen.module.scss';
 import CardUser from "../../components/cardUser";
 import Button from "../../components/UI/button";
 import {connect} from "react-redux";
-import {deleteUser, getUsers} from "../../store/users/action";
+import {deleteUser, getUsers} from "../../store/authors/action";
 import {useHistory} from "react-router-dom";
-import MainLoyalty from "../../components/mainLoyalty";
+import MainLoyalty from "../../components/layout/mainLoyalty";
 import {CREATE_USER_PATH} from "../../routes/Routes";
 
 const UsersScreen = ({getUsers, deleteUser, users, loading}) => {

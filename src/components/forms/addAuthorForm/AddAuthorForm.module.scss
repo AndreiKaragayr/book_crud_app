@@ -1,0 +1,14 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.form {
+
+}
+
+.control {
+  & button {
+    width: 100%;
+    margin: 8px 0;
+    text-transform: uppercase;
+  }
+}

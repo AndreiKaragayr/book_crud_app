@@ -2,115 +2,110 @@
 @import '../../../assets/scss/veriabel';
 
 .root {
-	font-family: $RobotoRegular;
-	font-size: 18px;
-	font-weight: normal;
-	line-height: normal;
-	color: $DARK;
-	text-align: left;
+  font-family: $RobotoRegular;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  color: $DARK;
+  text-align: left;
 }
 
 .field {
-	position: relative;
-	border-radius: 12px;
-	border: 1px solid $GREY;
-	height: 75px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: $WHITE;
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid $GREY;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: $WHITE;
 
-	& ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		color: $PLACEHOLDER_COLOR;
-	}
-	& ::-moz-placeholder { /* Firefox 19+ */
-		color: $PLACEHOLDER_COLOR;
-	}
-	& :-ms-input-placeholder { /* IE 10+ */
-		color: $PLACEHOLDER_COLOR;
-	}
-	& :-moz-placeholder { /* Firefox 18- */
-		color: $PLACEHOLDER_COLOR;
-	}
+  & ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $PLACEHOLDER_COLOR;
+  }
 
-	/* Chrome, Safari, Edge, Opera */
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
+  & ::-moz-placeholder { /* Firefox 19+ */
+    color: $PLACEHOLDER_COLOR;
+  }
 
-	/* Firefox */
-	input[type=number] {
-		-moz-appearance: textfield;
-	}
+  & :-ms-input-placeholder { /* IE 10+ */
+    color: $PLACEHOLDER_COLOR;
+  }
 
-	&.error {
-		border-color: $RED;
-	}
+  & :-moz-placeholder { /* Firefox 18- */
+    color: $PLACEHOLDER_COLOR;
+  }
 
-	& input {
-		display: inline-block;
-		font-family: $RobotoRegular;
-		font-size: 18px;
-		font-weight: normal;
-		line-height: normal;
-		border-radius: 12px;
-		padding: 0 20px;
-		width: 100%;
-		height: 100%;
-		background: transparent;
-		border: 0;
-	}
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-	& input:focus {
-		outline: none;
-	}
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 
-	& input[readonly] {
-		background-color: rgba(211, 216, 250, 0.5) !important;
-	}
-}
+  &.error {
+    border-color: $RED;
+  }
 
-.toolt {
-	width: 16px !important;
-	height: 16px;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	right: 0;
-	margin: 15px;
+  & input {
+    display: inline-block;
+    font-family: $RobotoRegular;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    border-radius: 12px;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+  }
+
+  & input:focus {
+    outline: none;
+  }
+
+  & input[readonly] {
+    background-color: rgba(211, 216, 250, 0.5) !important;
+  }
 }
 
 .label {
-	display: flex;
-	position: absolute;
-	top: 16px;
-	padding: 0 20px;
-	color: $BLUE;
-	font-family: $Roboto-Bold;
-	font-size: 10px;
-	font-weight: 900;
-	text-transform: uppercase;
-	margin-top: 0;
-	margin-bottom: 7px;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  padding: 0 20px;
+  color: $BLUE;
+  font-family: $Roboto-Bold;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
 
-	& img {
-		display: block;
-		width: 12px;
-		max-height: 12px;
-		margin-right: 7px;
-	}
+  & img {
+    display: block;
+    width: 12px;
+    max-height: 12px;
+    margin-right: 7px;
+  }
 
-	& + input {
-		padding-top: 16px;
-	}
+  & + input {
+    padding-top: 16px;
+  }
 }
 
 .errorMessage {
-	font-family: $RobotoRegular;
-	font-size: 14px;
-	line-height: 24px;
-	color: $RED !important;
-	text-align: left;
+  font-family: $RobotoRegular;
+  font-size: 14px;
+  line-height: 24px;
+  color: $RED !important;
+  text-align: left;
 }

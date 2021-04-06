@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import styles from './UserDetailScreen.module.scss';
 import {connect} from "react-redux";
 import {useParams, useHistory} from "react-router-dom"
-import {deleteUser, getUserById} from "../../store/users/action";
-import MainLoyalty from "../../components/mainLoyalty";
+import {deleteUser, getUserById} from "../../store/authors/action";
+import MainLoyalty from "../../components/layout/mainLoyalty";
 import ReadOnlyUserForm from "../../components/forms/readOnlyUserForm/ReadOnlyUserForm";
 
 const UserDetailScreen = ({getUserById, deleteUser, user_detail, loading}) => {

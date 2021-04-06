@@ -20,9 +20,7 @@ const InputField = (
 
         {
           label.length ?
-            <label className={styles.label}>
-              {label}
-            </label>
+            <label className={styles.label}>{label}</label>
           : null
         }
 

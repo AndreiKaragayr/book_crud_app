@@ -1,24 +1,30 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-const Button = ({type='primary', isSubmit=true, children, disabled=false, onClick=()=>''}) => {
+const Button = ({
+                  view='primary',
+                  type='button',
+                  children,
+                  disabled=false,
+                  onClick=()=>''}
+                  ) => {
   let classes = []
 
-  if(type && type === 'outline') {
-    classes.push(styles.outline)
+  if(view && view === 'btn-secondary') {
+    classes.push('btn-secondary')
   }
-  else if (type && type === 'red'){
-    classes.push(styles.red)
+  else if (view && view === 'btn-danger'){
+    classes.push('btn-danger')
   }
-  else if (type && type === 'green'){
-    classes.push(styles.green)
+  else if (view && view === 'btn-success'){
+    classes.push('btn-success')
   }
   else {
-    classes.push(styles.primary)
+    classes.push('btn-primary')
   }
 
   return (
-    <button type={isSubmit ? 'submit' : 'button'} className={`${styles.root} ${classes.join(' ')} `} onClick={onClick}>
+    <button type={type} className={`btn ${classes.join(' ')} ${styles.root}`} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   )

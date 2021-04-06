@@ -1,6 +1,6 @@
 import React from "react";
 import {Form, withFormik} from "formik/dist/index";
-import styles from "./AddUserForm.module.scss";
+import styles from "./EditAuthorForm.module.scss";
 import * as Yup from "yup";
 import {useHistory} from 'react-router-dom'
 import Button from "../../UI/button";
@@ -17,7 +17,7 @@ import {
 import SelectInput from "../../UI/selectInput";
 import InputCheckbox from "../../UI/inputCheckbox/InputCheckbox";
 
-const AddUserForm = ({
+const EditAuthorForm = ({
                            isLoading,
                            values,
                            touched,
@@ -29,7 +29,7 @@ const AddUserForm = ({
                          }) => {
   const history = useHistory();
   return (
-    <Form name="AddUserForm" className={styles.form}>
+    <Form name="EditAuthorForm" className={styles.form}>
       <div className={styles.row}>
         <div className={`${styles.col4} ${styles.mb2}`}>
           <InputField
@@ -166,4 +166,4 @@ export default withFormik({
   handleSubmit: ({ first_name, last_name, birth_date, biography, gender, job, is_active }, {props}) => {
     props.handleSubmit(first_name, last_name, birth_date, biography, gender, job, is_active);
   },
-})(AddUserForm);
+})(EditAuthorForm);

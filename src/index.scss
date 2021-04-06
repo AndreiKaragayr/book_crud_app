@@ -1,4 +1,5 @@
-@import 'normalize.css';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
 
 @font-face {
   font-family: Roboto-Bold;
@@ -38,7 +39,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #f4f6f7;;
+  background-color: #fff;;
 }
 
 code {
