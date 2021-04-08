@@ -8,9 +8,9 @@ import {NavLink} from "react-router-dom";
 import ViewSVG from "../../components/iconsSVG/ViewSVG";
 import EditSVG from "../../components/iconsSVG/EditSVG";
 import DeleteSVG from "../../components/iconsSVG/DeleteSVG";
+import Panel from "../../components/layout/panel";
 
-const AuthorsScreen = ({getAuthors, deleteAuthor, addAuthor, authors}) => {
-
+const AuthorsScreen = ({isLoading, getAuthors, deleteAuthor, addAuthor, authors}) => {
   const handleSubmit = (first_name, last_name) => addAuthor(first_name, last_name)
   const handleDelete = (id) => {
     return deleteAuthor(id)
@@ -18,59 +18,63 @@ const AuthorsScreen = ({getAuthors, deleteAuthor, addAuthor, authors}) => {
 
   useEffect(() => {
     getAuthors()
-
   }, [getAuthors])
-
-  console.log('authors: ', authors && authors)
 
   return (
     <div className={styles.root}>
-      <MainLoyalty title={'Authors Screen'} isLoading={false}>
-        <AddAuthorForm handleSubmit={handleSubmit} isLoading={false}/>
+      <MainLoyalty title={'Авторы'} isLoading={isLoading}>
 
-        <div className="table-responsive my-4">
-          <table className="table table-bordered table-hover">
-            <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col" className={styles.action}>Action</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div className="mb-4">
+          <Panel title={'Добавить автора'}>
+            <AddAuthorForm handleSubmit={handleSubmit} isLoading={isLoading}/>
+          </Panel>
+        </div>
 
-            {
-              authors && authors.length ? authors.map((a, index) => {
-                return (
-                  <tr className={styles.tr} key={a.id}>
-                    <th scope="row">
-                      {++index}
-                    </th>
-                    <td>{a.first_name}</td>
-                    <td>{a.last_name}</td>
-                    <th>
-                      <div className={styles.controls}>
-                        <NavLink to={`/author-details/${a.id}`} className={styles.link}><ViewSVG /></NavLink>
-                        <NavLink to={`/author-edit/${a.id}`} className={styles.link}><EditSVG /></NavLink>
-                        <div className={styles.link} onClick={() => handleDelete(a.id)}><DeleteSVG /></div>
-                      </div>
-                    </th>
-                  </tr>
-                )
-              })
-                :
+        <Panel>
+          <div className="table-responsive my-4">
+            <table className="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th scope="col" className={styles.th}>#</th>
+                <th scope="col" className={styles.th}>First</th>
+                <th scope="col" className={styles.th}>Last</th>
+                <th scope="col" className={`${styles.action} ${styles.th}`}>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              {
+                authors && authors.length ? authors.map((a, index) => {
+                    return (
+                      <tr className={styles.tr} key={a.id}>
+                        <th scope="row" className={styles.th}>
+                          {++index}
+                        </th>
+                        <td className={styles.td}>{a.first_name}</td>
+                        <td className={styles.td}>{a.last_name}</td>
+                        <td className={styles.td}>
+                          <div className={styles.controls}>
+                            <NavLink to={`/author-details/${a.id}`} className={styles.link}><ViewSVG /></NavLink>
+                            <NavLink to={`/author-edit/${a.id}`} className={styles.link}><EditSVG /></NavLink>
+                            <div className={styles.link} onClick={() => handleDelete(a.id)}><DeleteSVG /></div>
+                          </div>
+                        </td>
+                      </tr>
+                    )
+                  })
+                  :
                   <tr className={styles.tr}>
                     <th scope="row"> </th>
-                    <td colSpan="3">
-                      Authors not Found
+                    <td colSpan="3" className={styles.td}>
+                      Авторы не найдены
                     </td>
                   </tr>
-            }
+              }
 
-            </tbody>
-          </table>
-        </div>
+              </tbody>
+            </table>
+          </div>
+        </Panel>
 
       </MainLoyalty>
     </div>
@@ -78,7 +82,8 @@ const AuthorsScreen = ({getAuthors, deleteAuthor, addAuthor, authors}) => {
 }
 
 const mapStateToProps = state => ({
-  authors: state.authors.authorsLists
+  authors: state.authors.authorsLists,
+  isLoading: state.authors.loading
 })
 
 const mapDispatchToProps = dispatch => ({

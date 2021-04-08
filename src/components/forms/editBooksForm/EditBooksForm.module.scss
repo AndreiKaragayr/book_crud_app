@@ -1,0 +1,102 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.form {
+
+}
+
+.th {
+  font-family: $Roboto-Bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: $DARK;
+}
+
+.td {
+  height: 56px;
+  font-family: $RobotoRegular;
+  font-size: 16px;
+  line-height: 24px;
+  color: $DARK;
+}
+
+.file {
+  position: relative;
+  width: 111px;
+  height: 111px;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @include max-media(xs) {
+    margin: auto;
+  }
+
+  & input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  & .preview {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  & .preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  & .preview svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+  }
+
+  & .removeImage {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 4px;
+    right: 4px;
+    z-index: 2;
+    background-color: $RED;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $expo;
+
+    &:hover {
+      background-color: $DARK;
+    }
+
+    &:hover svg {
+      fill: $WHITE;
+    }
+  }
+
+  & .removeImage svg {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+
+.errorMessage {
+  font-family: $RobotoRegular;
+  font-size: 14px;
+  line-height: 14px;
+  color: $RED !important;
+  text-align: left;
+  margin-top: 7px;
+}

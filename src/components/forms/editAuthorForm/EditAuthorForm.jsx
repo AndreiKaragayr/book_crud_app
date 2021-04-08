@@ -31,8 +31,8 @@ const EditAuthorForm = ({
           <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col" className={styles.th}>Имя автора</th>
+            <th scope="col" className={styles.th}>Фамилия автора</th>
           </tr>
           </thead>
           <tbody>
@@ -68,7 +68,7 @@ const EditAuthorForm = ({
       </div>
       <div className="d-flex justify-content-end">
         <div className='ml-4'>
-          <Button view={'btn-secondary'} onClick={() => history.goBack()}>Назад</Button>
+          <Button view={'btn-secondary'} disabled={isLoading} onClick={() => history.goBack()}>Назад</Button>
         </div>
         <div className='ml-4'>
           <Button onClick={props.handleSubmit} disabled={isLoading}>Сохранить</Button>

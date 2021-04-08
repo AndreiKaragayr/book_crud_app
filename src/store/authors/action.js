@@ -6,7 +6,6 @@ export const addAuthor = (first_name='', last_name='') => async (dispatch) => {
   await api.addAuthor(first_name, last_name)
     .then((res) => {
       console.log('RES: ', res)
-      alert('Пользователь Добавлен')
       dispatch({
         type: AUTHORS.ADD.SUCCESS,
         payload: {first_name, last_name},
@@ -48,7 +47,6 @@ export const updateAuthor = (id='', first_name='', last_name='') => async (dispa
   await api.updateAuthor(id, first_name, last_name)
     .then((res) => {
       console.log('RES: ', res)
-      alert('Пользователь изменен')
       return dispatch({
         type: AUTHORS.UPDATE.SUCCESS,
         payload: {id, first_name, last_name}

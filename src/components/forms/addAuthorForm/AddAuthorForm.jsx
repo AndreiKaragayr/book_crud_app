@@ -25,7 +25,7 @@ const AddAuthorForm = ({
     <Form name="addAuthorForm" className={styles.form}>
 
       <div className="row align-items-start">
-        <div className="col-md-5 mb-4">
+        <div className="col-md-5 mb-2 mb-md-0">
             <InputField
               label='Имя'
               placeholder="Введите имя"
@@ -37,7 +37,7 @@ const AddAuthorForm = ({
               error={(touched.first_name && errors.first_name) && errors.first_name}
             />
         </div>
-        <div className="col-md-5 mb-4">
+        <div className="col-md-5 mb-2 mb-md-0">
           <InputField
             label='Фамилия'
             placeholder="Введите фамилию"
@@ -49,7 +49,7 @@ const AddAuthorForm = ({
             error={(touched.last_name && errors.last_name) && errors.last_name}
           />
         </div>
-        <div className={`col-md-2 d-flex justify-content-md-end justify-content-center mb-4 ${styles.control}`}>
+        <div className={`col-md-2 d-flex justify-content-md-end justify-content-center mb-2 mb-md-0 ${styles.control}`}>
           <Button onClick={props.handleSubmit} disabled={isLoading}>Добывить</Button>
         </div>
       </div>

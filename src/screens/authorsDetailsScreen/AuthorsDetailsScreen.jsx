@@ -22,7 +22,6 @@ const AuthorsDetailsScreen = ({authors}) => {
     }
   }, [authors, params.author_id])
 
-
   return (
     <div className={styles.root}>
       <MainLoyalty title={'Про автора'} isLoading={false}>
@@ -31,20 +30,26 @@ const AuthorsDetailsScreen = ({authors}) => {
           <table className="table table-bordered table-hover">
             <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
+              <th scope="col" className={styles.th}>#</th>
+              <th scope="col" className={styles.th}>First</th>
+              <th scope="col" className={styles.th}>Last</th>
             </tr>
             </thead>
             <tbody>
               {
                 author ?
                 <tr className={styles.tr}>
-                  <th scope="row"> </th>
-                  <td>{author.first_name}</td>
-                  <td>{author.last_name}</td>
+                  <th scope="row" className={styles.th} />
+                  <td className={styles.td}>{author.first_name}</td>
+                  <td className={styles.td}>{author.last_name}</td>
                 </tr>
-                  : <p>Author not Found</p>
+                  :
+                  <tr className={styles.tr}>
+                    <th scope="row"> </th>
+                    <td colSpan="3" className={styles.td}>
+                      Books not Found
+                    </td>
+                  </tr>
               }
 
             </tbody>

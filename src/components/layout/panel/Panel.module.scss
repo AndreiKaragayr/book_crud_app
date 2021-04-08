@@ -1,0 +1,17 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/veriabel';
+
+.root {
+  position: relative;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: $boxShadow;
+}
+
+.title {
+  font-family: $RobotoRegular;
+  font-size: 20px;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}

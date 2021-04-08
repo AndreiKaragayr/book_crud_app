@@ -1,3 +1,66 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/veriabel';
+
 .root {
 
+}
+
+.action {
+  width: 200px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.tr {}
+
+.th {
+  font-family: $Roboto-Bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: $DARK;
+}
+
+.td {
+  height: 56px;
+  font-family: $RobotoRegular;
+  font-size: 16px;
+  line-height: 24px;
+  color: $DARK;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  border-radius: 4px;
+  background-color: $GREY;
+  padding: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & svg {
+    width: 20px;
+    max-height: 16px;
+  }
+
+  & svg path {
+    fill: $DARK
+  }
+}
+
+.image {
+  width: 111px;
+  height: 111px;
+  border-radius: 12px;
+  object-fit: cover;
 }

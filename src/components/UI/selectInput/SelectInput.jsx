@@ -16,7 +16,7 @@ const SelectInput = (
       <div className={styles.field}>
         {label ? <label className={styles.label}>{label}</label> : null}
         <Select
-          className='custom-select'
+          className='react-custom-select'
           defaultValue={defaultValue || options[0]}
           options={options}
           onChange={(value) => onChange(value)}
@@ -33,8 +33,8 @@ const SelectInput = (
               lineHeight: '20px',
             }),
             control: () => ({
-              border: '1px solid #cdcdcd',
-              height: '75px',
+              border: `1px solid ${error.length ? "#e93c5c": "#cdcdcd"}`,
+              height: '64px',
               width: '100%',
               display: 'flex',
               borderRadius: '12px',
@@ -43,10 +43,12 @@ const SelectInput = (
             }),
             valueContainer: () => ({
               width: '100%',
-              paddingLeft: '15px',
-              paddingRight: '15px',
+              minWidth: '120px',
+              paddingLeft: '20px',
+              paddingRight: '0',
               paddingBottom: '15px',
-              paddingTop: '15px'
+              paddingTop: '15px',
+              position: 'relative'
             }),
             placeholder: (provided, state) => {
               return {
@@ -56,7 +58,7 @@ const SelectInput = (
                 marginRight: '0',
                 color: 'rgba(21, 21, 21, 0.5)',
                 fontFamily: 'Roboto-Regular',
-                fontSize: '18px',
+                fontSize: '16px',
                 lineHeight: '24px',
                 fontWeight: 300,
                 letterSpacing: 0
@@ -74,8 +76,8 @@ const SelectInput = (
                 marginRight: '0',
                 color: 'rgb(55, 60, 83)',
                 fontFamily: 'Roboto-Regular',
-                fontSize: '18px',
-                lineHeight: '24px',
+                fontSize: '14px',
+                lineHeight: '20px',
                 fontWeight: 300,
                 letterSpacing: 0
               };
@@ -86,7 +88,7 @@ const SelectInput = (
               marginRight: '0',
               color: '#212121',
               fontFamily: 'Roboto-Regular',
-              fontSize: '18px',
+              fontSize: '16px',
               lineHeight: '24px',
               fontWeight: 300,
               letterSpacing: 0,
@@ -107,7 +109,8 @@ const SelectInput = (
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              marginTop: '33px'
+              marginTop: '24px',
+              marginLeft: '10px'
             }),
             menuList: (provided, state) => {
               return {

@@ -1,7 +1,9 @@
 @import '../../assets/scss/mixins';
 @import '../../assets/scss/veriabel';
 
-.root {}
+.root {
+
+}
 
 .action {
   width: 200px;
@@ -52,5 +54,19 @@
 
   & svg path {
     fill: $DARK
+  }
+}
+
+.image {
+  & img {
+    width: 111px;
+    height: 111px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  & svg {
+    width: 111px;
+    height: 111px;
   }
 }
